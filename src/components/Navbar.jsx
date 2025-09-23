@@ -26,8 +26,8 @@ const scrollToSection = (sectionId = "") => {
             <li key={item.id}>
               <button
                 onClick={() => scrollToSection(item.id)}
-                className={`text-white hover:text-pink-300 transition-colors ${
-                  activeSection === item.id ? "text-pink-300" : ""
+                className={`text-white hover:text-gray-500 transition-colors ${
+                  activeSection === item.id ? "text-gray-500" : ""
                 }`}
               >
                 {item.label}
