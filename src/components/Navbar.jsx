@@ -25,7 +25,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center text-center pt-5 px-6 py-4">
         {/* Logo */}
-        <h2 className="font-semibold text-white">Barokah Oyin</h2>
+        <h2 className="font-semibold text-gry-500">Barokah Oyin</h2>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center space-x-8">
@@ -57,7 +57,7 @@ const Navbar = () => {
         {/* Mobile Menu Icon (hidden when sidebar is open) */}
         {!isOpen && (
           <div
-            className="md:hidden flex text-2xl text-white cursor-pointer items-center"
+            className="md:hidden flex text-2xl text-gray-500 cursor-pointer items-center"
             onClick={() => setIsOpen(true)}
           >
             <FaBars />
@@ -75,7 +75,7 @@ const Navbar = () => {
           >
             <FaWindowClose />
           </div>
-
+          <h2 className="font-semibold text-white">Barokah Oyin</h2>
           {[
             { id: "about", label: "About me" },
             { id: "skills", label: "My skills" },

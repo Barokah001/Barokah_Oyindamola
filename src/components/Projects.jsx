@@ -3,7 +3,7 @@ import Button from './Button'
 
 const Projects = () => {
   return (
-    <section id='projects' className="px-20 bg-[#edede9] py-15">
+    <section id="projects" className="px-20 bg-[#edede9] py-15">
       <div className="flex flex-col gap-10 justify-center items-center">
         <h1 className="justify-start text-3xl font-bold">Recent Projects</h1>
 
@@ -12,13 +12,22 @@ const Projects = () => {
             <img src="./images/Techty.png" alt="" className="rounded-lg" />
             <h3 className="text-l font-semibold">Techty Website</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
-              temporibus libero inventore! Quia, magni alias!
+              A sleek, responsive tech brand website showcasing services and
+              solutions with an engaging design and smooth navigation
             </p>
             <div className="flex gap-2 justify-start">
-              <Button name="React" style={"text-blue-300 bg-white rounded-full"} />
-              <Button name="Javascript" style={"text-green-300 bg-white rounded-full"} />
-              <Button name="Tailwind" style={"text-red-300 bg-white rounded-full"} />
+              <Button
+                name="React"
+                style={"text-blue-300 bg-white rounded-full"}
+              />
+              <Button
+                name="Javascript"
+                style={"text-green-300 bg-white rounded-full"}
+              />
+              <Button
+                name="Tailwind"
+                style={"text-red-300 bg-white rounded-full"}
+              />
             </div>
           </div>
 
@@ -26,13 +35,23 @@ const Projects = () => {
             <img src="./images/sneakers.png" alt="" className="rounded-lg" />
             <h3 className="text-l font-semibold">E-commercer Product page</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
-              temporibus libero inventore! Quia, magni alias!
+              A modern product display page with dynamic image switching,
+              quantity updates, and “Add to Cart” functionality for a real-world
+              online store feel.
             </p>
             <div className="flex gap-2 justify-start">
-              <Button name="React" style={"text-blue-300 bg-white rounded-full"} />
-              <Button name="Javascript" style={"text-green-300 bg-white rounded-full"} />
-              <Button name="Tailwind" style={"text-red-300 bg-white rounded-full"} />
+              <Button
+                name="React"
+                style={"text-blue-300 bg-white rounded-full"}
+              />
+              <Button
+                name="Javascript"
+                style={"text-green-300 bg-white rounded-full"}
+              />
+              <Button
+                name="Tailwind"
+                style={"text-red-300 bg-white rounded-full"}
+              />
             </div>
           </div>
 
@@ -40,17 +59,27 @@ const Projects = () => {
             <img src="./images/fruitvilla.png" alt="" className="rounded-lg" />
             <h3 className="text-l font-semibold">FruitVilla</h3>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est
-              temporibus libero inventore! Quia, magni alias!
+              A fresh and vibrant fruit delivery platform featuring clean UI,
+              product listings, and seamless cart integration for a smooth
+              shopping experience.
             </p>
             <div className="flex gap-2 justify-start">
-              <Button name="HTML" style={"text-blue-300 bg-white rounded-full"} />
-              <Button name="Javascript" style={"text-green-300 bg-white rounded-full"} />
-              <Button name="Tailwind" style={"text-red-300 bg-white rounded-full"} />
+              <Button
+                name="HTML"
+                style={"text-blue-300 bg-white rounded-full"}
+              />
+              <Button
+                name="Javascript"
+                style={"text-green-300 bg-white rounded-full"}
+              />
+              <Button
+                name="Tailwind"
+                style={"text-red-300 bg-white rounded-full"}
+              />
             </div>
           </div>
         </div>
-        <Button name="See More" style={"text-white bg-gray-500 rounded-lg"}/>
+        <Button name="See More" style={"text-white bg-gray-500 rounded-lg"} />
       </div>
     </section>
   );
