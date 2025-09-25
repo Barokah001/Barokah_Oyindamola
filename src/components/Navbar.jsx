@@ -69,13 +69,16 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute top-0 left-0 h-screen w-1/2 bg-black/20 backdrop-blur-[8px] flex flex-col items-center pt-20 space-y-6 md:hidden">
           {/* Close Icon inside sidebar */}
+          <div className="flex">
+            <h2 className="font-semibold text-white">Barokah Oyin</h2>
           <div
             className="absolute top-4 right-4 text-2xl text-white cursor-pointer"
             onClick={() => setIsOpen(false)}
           >
             <FaWindowClose />
           </div>
-          <h2 className="font-semibold text-white">Barokah Oyin</h2>
+          </div>
+
           {[
             { id: "about", label: "About me" },
             { id: "skills", label: "My skills" },
