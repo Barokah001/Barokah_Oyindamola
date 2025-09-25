@@ -23,8 +23,12 @@ const HeroSection = () => {
           />
         </h1>
 
-        <Button name='Download CV' style={`flex items-center justify-center border-1 border-gray-500 text-white rounded-full hover:bg-gray-500`}/>
-       
+        <a href="https://drive.google.com/file/d/1aAiahcLI5e82Lcdh6Nm06kEx-lBQM0ru/view?usp=drive_link">
+          <Button
+            name="Download CV"
+            style={`flex items-center justify-center border-1 border-gray-500 text-white rounded-full hover:bg-gray-500`}
+          />
+        </a>
       </div>
     </section>
   );
