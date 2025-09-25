@@ -3,12 +3,12 @@ import Button from './Button'
 
 const Projects = () => {
   return (
-    <section className="px-20 bg-[#edede9] py-15">
+    <section id='projects' className="px-20 bg-[#edede9] py-15">
       <div className="flex flex-col gap-10 justify-center items-center">
         <h1 className="justify-start text-3xl font-bold">Recent Projects</h1>
 
-        <div className="flex gap-7">
-          <div className="flex flex-col gap-4 justify-start py-10">
+        <div className="flex flex-col md:flex-row gap-12 md:gap-7">
+          <div className="flex flex-col gap-4 justify-start md:py-10">
             <img src="./images/Techty.png" alt="" className="rounded-lg" />
             <h3 className="text-l font-semibold">Techty Website</h3>
             <p>
@@ -22,7 +22,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4  justify-start py-10">
+          <div className="flex flex-col gap-4  justify-start md:py-10">
             <img src="./images/sneakers.png" alt="" className="rounded-lg" />
             <h3 className="text-l font-semibold">E-commercer Product page</h3>
             <p>
@@ -36,7 +36,7 @@ const Projects = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-4 justify-start py-10">
+          <div className="flex flex-col gap-4 justify-start md:py-10">
             <img src="./images/fruitvilla.png" alt="" className="rounded-lg" />
             <h3 className="text-l font-semibold">FruitVilla</h3>
             <p>
