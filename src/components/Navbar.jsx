@@ -25,7 +25,7 @@ const Navbar = () => {
     >
       <div className="flex justify-between items-center text-center pt-5 px-6 py-4">
         {/* Logo */}
-        <h2 className="font-semibold text-gry-500">Barokah Oyin</h2>
+        <h2 className="font-semibold text-gray-500 md:text-white">Barokah Oyin</h2>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center space-x-8">
