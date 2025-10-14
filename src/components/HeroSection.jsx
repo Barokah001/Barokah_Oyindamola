@@ -17,7 +17,7 @@ const HeroSection = () => {
       <div className="flex flex-col justify-center items-center relative z-10 text-center text-white px-6">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
           <TypewriterText
-            text="Hi there! My name is Barokah, and I'm a front-end developer"
+            text="Hi there! My name is Barokah Oyindamola, and I'm a front-end developer"
             speed={80}
             className="text-balance"
           />
