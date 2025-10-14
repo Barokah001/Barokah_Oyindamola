@@ -4,7 +4,7 @@ import Button from './Button';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-gray-700">
+    <section className="relative max-h-screen md:min-h-screen flex items-center justify-center bg-gray-700">
       {/* Background Image */}
       {/* <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
