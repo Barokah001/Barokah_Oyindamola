@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import { Computer, Github } from 'lucide-react';
 
 const Projects = () => {
   return (
@@ -29,6 +30,22 @@ const Projects = () => {
                 style={"text-red-300 bg-white rounded-full"}
               />
             </div>
+
+            <div className="flex justify-start gap-3">
+              <a href="https://github.com/Barokah001/Techty-Web">
+                <button className="flex gap-3 py-2 px-6 rounded-3xl bg-gray-700 text-white cursor-pointer">
+                  <Github />
+                  Code
+                </button>
+              </a>
+
+              <a href="https://github.com/Barokah001/Techty-Web">
+                <button className="flex gap-3 py-2 px-6 rounded-3xl bg-gray-700 text-white cursor-pointer">
+                  <Computer />
+                  Live
+                </button>
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col gap-4  justify-start md:py-10">
@@ -53,6 +70,22 @@ const Projects = () => {
                 style={"text-red-300 bg-white rounded-full"}
               />
             </div>
+
+            <div className="flex justify-start gap-3">
+              <a href="https://github.com/Barokah001/E-commerce-Products-Page">
+                <button className="flex gap-3 py-2 px-6 rounded-3xl bg-gray-700 text-white cursor-pointer">
+                  <Github />
+                  Code
+                </button>
+              </a>
+
+              <a href="https://e-commerce-products-page-green.vercel.app/">
+                <button className="flex gap-3 py-2 px-6 rounded-3xl bg-gray-700 text-white cursor-pointer">
+                  <Computer />
+                  Live
+                </button>
+              </a>
+            </div>
           </div>
 
           <div className="flex flex-col gap-4 justify-start md:py-10">
@@ -76,6 +109,22 @@ const Projects = () => {
                 name="Tailwind"
                 style={"text-red-300 bg-white rounded-full"}
               />
+            </div>
+
+            <div className="flex justify-start gap-3">
+              <a href="https://github.com/Barokah001/FruitVilla">
+                <button className="flex gap-3 py-2 px-6 rounded-3xl bg-gray-700 text-white cursor-pointer">
+                  <Github />
+                  Code
+                </button>
+              </a>
+
+              <a href="https://fruitvilla.vercel.app/">
+                <button className="flex gap-3 py-2 px-6 rounded-3xl bg-gray-700 text-white cursor-pointer">
+                  <Computer />
+                  Live
+                </button>
+              </a>
             </div>
           </div>
         </div>
