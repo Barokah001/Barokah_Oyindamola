@@ -39,7 +39,7 @@ const Projects = () => {
                 </button>
               </a>
 
-              <a href="https://github.com/Barokah001/Techty-Web">
+              <a href="https://techty-web-mzdy-4uu5wnact-alimibarakat001gmailcoms-projects.vercel.app/">
                 <button className="flex gap-3 py-2 px-6 rounded-3xl bg-gray-700 text-white cursor-pointer">
                   <Computer />
                   Live
