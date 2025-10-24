@@ -69,7 +69,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="absolute top-0 left-0 h-screen w-1/2 bg-black/20 backdrop-blur-[8px] flex flex-col items-center pt-20 space-y-6 md:hidden">
           {/* Close Icon inside sidebar */}
-          <div className="absolute flex justify-between items-center gap-18 top-5 left-5">
+          <div className="absolute flex justify-between items-center gap-15 top-5 left-5">
             <h2 className="font-semibold text-white">Barokah Oyin</h2>
             <div
               className="  right-4 text-2xl text-white cursor-pointer"
