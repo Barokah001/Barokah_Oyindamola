@@ -97,10 +97,10 @@ const Contacts = () => {
                   >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="font-bold text-gray-900 text-xl mb-2 text-center">
+                  <h3 className="font-bold text-white text-xl mb-2 text-center">
                     {method.title}
                   </h3>
-                  <p className="text-gray-600 text-center break-words">
+                  <p className="text-white text-center break-words">
                     {method.value}
                   </p>
                 </div>
@@ -124,7 +124,7 @@ const Contacts = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-14 h-14 bg-white rounded-full flex items-center justify-center text-white ${social.color} shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
+                  className={`w-14 h-14 bg-white rounded-full flex items-center justify-center text-gray-600 ${social.color} shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
                 >
                   <Icon className="text-2xl" />
                 </a>
