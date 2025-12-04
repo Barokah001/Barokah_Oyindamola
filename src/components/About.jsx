@@ -92,16 +92,16 @@ const About = () => {
                 : "opacity-0 translate-x-10"
             }`}
           >
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-3">
               {stats.map((stat, index) => (
                 <div
                   key={index}
-                  className="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl hover:shadow-lg transition-shadow"
+                  className="text-center px-3 py-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl hover:shadow-lg transition-shadow"
                 >
-                  <div className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mb-2">
+                  <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mb-2">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
+                  <div className="text-gray-600 font-small md:font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>

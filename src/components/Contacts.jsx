@@ -60,11 +60,7 @@ const Contacts = () => {
   ];
 
   return (
-    <section
-      id="contacts"
-      ref={sectionRef}
-      className="py-24 bg-gradient-to-br from-purple-50 to-blue-50"
-    >
+    <section id="contacts" ref={sectionRef} className="py-24 bg-gray-900 ">
       <div className="max-w-7xl mx-auto px-6">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
@@ -74,7 +70,7 @@ const Contacts = () => {
           <h2 className="text-5xl font-bold text-gray-900 mb-4">
             Let's Connect
           </h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1.5 bg-gray-900  mx-auto mb-6"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Have a project in mind or want to discuss opportunities? I'd love to
             hear from you!

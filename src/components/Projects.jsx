@@ -8,25 +8,30 @@ const Projects = () => {
 
   const projects = [
     {
-  id: 1,
-  title: "NutriNest",
-  description:
-    "A smart, user-friendly nutrition platform that helps users calculate BMI, understand their health metrics, and get personalized guidance for better wellness.",
-  detailedDescription:
-    "Developed an intuitive nutrition-focused web app that allows users to sign up, input health details, and instantly receive accurate BMI results with clear interpretations. Designed educational sections explaining BMI and calorie needs for both beginners and informed users. Built with modern React patterns, responsive layouts, and smooth UI interactions to ensure an accessible experience across devices.",
-  image: "./images/NutrNest.png",
-  technologies: ["React", "JavaScript", "Tailwind", "Supabase"],
-  techColors: ["text-blue-400", "text-yellow-400", "text-cyan-400", "text-green-400"],
-  githubUrl: "https://github.com/Barokah001/NutriNest",
-  liveUrl: "https://nutri-nest-nine.vercel.app",
-  highlights: [
-    "BMI Calculator",
-    "User Authentication",
-    "Clean UX Writing",
-    "Responsive & Accessible Design",
-    "Light/Dark Mode"
-  ],
-},
+      id: 1,
+      title: "NutriNest",
+      description:
+        "A smart, user-friendly nutrition platform that helps users calculate BMI, understand their health metrics, and get personalized guidance for better wellness.",
+      detailedDescription:
+        "Developed an intuitive nutrition-focused web app that allows users to sign up, input health details, and instantly receive accurate BMI results with clear interpretations. Designed educational sections explaining BMI and calorie needs for both beginners and informed users. Built with modern React patterns, responsive layouts, and smooth UI interactions to ensure an accessible experience across devices.",
+      image: "./images/NutriNest.png",
+      technologies: ["React", "JavaScript", "Tailwind", "Supabase"],
+      techColors: [
+        "text-blue-400",
+        "text-yellow-400",
+        "text-cyan-400",
+        "text-green-400",
+      ],
+      githubUrl: "https://github.com/Barokah001/",
+      liveUrl: "https://nutri-nest-nine.vercel.app",
+      highlights: [
+        "BMI Calculator",
+        "User Authentication",
+        "Clean UX Writing",
+        "Responsive & Accessible Design",
+        "Light/Dark Mode",
+      ],
+    },
 
     {
       id: 2,
@@ -59,6 +64,26 @@ const Projects = () => {
     },
     {
       id: 4,
+      title: "Ramadan Companion",
+      description:
+        "A serene, spiritually uplifting platform offering daily Qur’an & Hadith quotes, Ramadan-themed downloadable images, and guided adhkar for visitors.",
+      detailedDescription:
+        "Built a spiritually centered web platform designed to support Muslims throughout Ramadan. The website provides daily inspirational quotes from the Qur’an and Hadith, a curated collection of beautifully designed Ramadan images that users can download and share across social media, and a section dedicated to daily adhkar. Focused on simplicity, accessibility, and a calming user experience with smooth navigation, responsive layouts, and modern frontend patterns.",
+      image: "./images/RamadanCompanion.png",
+      technologies: ["React", "JavaScript", "Tailwind"],
+      techColors: ["text-blue-400", "text-yellow-400", "text-cyan-400"],
+      githubUrl: "https://github.com/Barokah001/Ramadan_Companion",
+      liveUrl: "https://ramadan-companion-three.vercel.app/",
+      highlights: [
+        "Daily Qur’an & Hadith Quotes",
+        "Downloadable Ramadan Images",
+        "Daily Adhkar Section",
+        "Minimal & Calming UI",
+        "Responsive Design",
+      ],
+    },
+    {
+      id: 5,
       title: "FruitVilla",
       description:
         "A fresh and vibrant fruit delivery platform featuring clean UI, product listings, and seamless cart integration for a smooth shopping experience.",
