@@ -6,12 +6,10 @@ import {
   FaNodeJs,
   FaNpm,
   FaGit,
-  FaInstagram,
-  FaLinkedin,
+
 } from "react-icons/fa";
 
 const SkillsSection = () => {
-  const [activeSkill, setActiveSkill] = useState(null);
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -33,42 +31,12 @@ const SkillsSection = () => {
   }, []);
 
   const skills = [
-    {
-      name: "React",
-      icon: FaReact,
-      color: "from-blue-400 to-cyan-400",
-      proficiency: 90,
-    },
-    {
-      name: "HTML5",
-      icon: FaHtml5,
-      color: "from-orange-500 to-red-500",
-      proficiency: 95,
-    },
-    {
-      name: "CSS3",
-      icon: FaCss3Alt,
-      color: "from-blue-500 to-blue-600",
-      proficiency: 90,
-    },
-    {
-      name: "Node.js",
-      icon: FaNodeJs,
-      color: "from-green-500 to-green-600",
-      proficiency: 75,
-    },
-    // {
-    //   name: "npm",
-    //   icon: FaNpn,
-    //   color: "from-red-600 to-red-700",
-    //   proficiency: 85,
-    // },
-    {
-      name: "Git",
-      icon: FaGit,
-      color: "from-orange-600 to-red-600",
-      proficiency: 85,
-    },
+    { name: "React", icon: FaReact, color: "from-blue-400 to-cyan-400" },
+    { name: "HTML5", icon: FaHtml5, color: "from-orange-500 to-red-500" },
+    { name: "CSS3", icon: FaCss3Alt, color: "from-blue-500 to-blue-600" },
+    { name: "Node.js", icon: FaNodeJs, color: "from-green-500 to-green-600" },
+    { name: "npm", icon: FaNpm, color: "from-red-600 to-red-700" },
+    { name: "Git", icon: FaGit, color: "from-orange-600 to-red-600" },
   ];
 
   return (
@@ -105,43 +73,17 @@ const SkillsSection = () => {
                     : "opacity-0 translate-y-10"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
-                onClick={() =>
-                  setActiveSkill(skill.name === activeSkill ? null : skill.name)
-                }
               >
-                <div
-                  className={`relative group cursor-pointer bg-white rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 ${
-                    activeSkill === skill.name ? "scale-105 shadow-2xl" : ""
-                  }`}
-                >
+                <div className="group bg-white rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   <div className="flex flex-col items-center">
                     <div
                       className={`text-6xl mb-4 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent transition-transform duration-300 group-hover:scale-110`}
                     >
                       <Icon />
                     </div>
-                    <h3 className="font-bold text-gray-900 text-lg mb-2">
+                    <h3 className="font-bold text-gray-900 text-lg">
                       {skill.name}
                     </h3>
-
-                    {/* Proficiency Bar */}
-                    <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                      <div
-                        className={`h-2 rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000`}
-                        style={{
-                          width:
-                            activeSkill === skill.name
-                              ? `${skill.proficiency}%`
-                              : "0%",
-                        }}
-                      ></div>
-                    </div>
-
-                    {activeSkill === skill.name && (
-                      <span className="text-sm text-gray-600 font-medium">
-                        {skill.proficiency}% Proficiency
-                      </span>
-                    )}
                   </div>
                 </div>
               </div>
@@ -170,7 +112,7 @@ const SkillsSection = () => {
             ].map((skill) => (
               <span
                 key={skill}
-                className="px-6 py-3 bg-white rounded-full text-gray-700 font-medium shadow-md hover:shadow-lg transition-shadow"
+                className="px-6 py-3 bg-white rounded-full text-gray-700 font-medium shadow-md hover:shadow-lg hover:scale-105 transition-all"
               >
                 {skill}
               </span>
