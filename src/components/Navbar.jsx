@@ -1,45 +1,62 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./Button";
 import { FaBars, FaWindowClose } from "react-icons/fa";
+import { Menu } from "lucide-react";
 
+
+// Navbar Component
 const Navbar = () => {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("hero");
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const scrollToSection = (sectionId = "") => {
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
     setActiveSection(sectionId);
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
-    setIsOpen(false); // close sidebar after click
+    setIsOpen(false);
   };
 
   return (
     <nav
-      className={`${
-        isOpen ? "absolute backdrop-blur-[6px] items-center" : "md:fixed"
-      } top-0 left-0 right-0 z-50 bg-black/20 backdrop-blur-[6px] items-center`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white shadow-lg py-4' : 'bg-white/10 backdrop-blur-md py-6'
+      }`}
     >
-      <div className="flex justify-between items-center text-center pt-5 px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <h2 className="font-semibold text-gray-500 md:text-white">Barokah Oyin</h2>
+        <h2 className={`font-bold text-2xl transition-colors ${scrolled ? 'text-gray-900' : 'text-white'}`}>
+          Barokah<span className="text-purple-600">.</span>
+        </h2>
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex items-center space-x-8">
           {[
-            { id: "about", label: "About me" },
-            { id: "skills", label: "My skills" },
+            { id: "hero", label: "Home" },
+            { id: "about", label: "About" },
+            { id: "skills", label: "Skills" },
             { id: "projects", label: "Projects" },
-            { id: "contacts", label: "Contacts" },
+            { id: "contacts", label: "Contact" },
           ].map((item) => (
             <li key={item.id}>
               <button
                 onClick={() => scrollToSection(item.id)}
-                className={`cursor-pointer text-white hover:text-gray-300 transition-colors ${
-                  activeSection === item.id ? "text-gray-300" : ""
+                className={`font-medium transition-colors ${
+                  activeSection === item.id 
+                    ? 'text-purple-600' 
+                    : scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white hover:text-purple-300'
                 }`}
               >
                 {item.label}
@@ -47,61 +64,48 @@ const Navbar = () => {
             </li>
           ))}
           <a href="mailto:alimibarabarakat001@gmail.com">
-            <Button
-              name="Contact Me"
-              style={`bg-gray-500 text-white rounded-2xl hover:bg-gray-600`}
-            />
+            <button className="px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-medium hover:shadow-lg transform hover:-translate-y-0.5 transition-all">
+              Let's Talk
+            </button>
           </a>
         </ul>
 
-        {/* Mobile Menu Icon (hidden when sidebar is open) */}
-        {!isOpen && (
-          <div
-            className="md:hidden flex text-2xl text-gray-500 cursor-pointer items-center"
-            onClick={() => setIsOpen(true)}
-          >
-            <FaBars />
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <button
+          className={`md:hidden ${scrolled ? 'text-gray-900' : 'text-white'}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <Menu size={28} />
+        </button>
       </div>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-0 left-0 h-fit pb-10 w-2/3 bg-black/20 backdrop-blur-[8px] flex flex-col items-center pt-20 space-y-8 md:hidden">
-          {/* Close Icon inside sidebar */}
-          <div className="absolute flex justify-between items-center gap-18 top-5 left-5">
-            <h2 className="font-semibold text-white">Barokah Oyin</h2>
-            <div
-              className="  right-4 text-2xl text-white cursor-pointer"
-              onClick={() => setIsOpen(false)}
-            >
-              <FaWindowClose />
-            </div>
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg">
+          <div className="flex flex-col p-6 space-y-4">
+            {[
+              { id: "hero", label: "Home" },
+              { id: "about", label: "About" },
+              { id: "skills", label: "Skills" },
+              { id: "projects", label: "Projects" },
+              { id: "contacts", label: "Contact" },
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => scrollToSection(item.id)}
+                className={`text-left font-medium py-2 ${
+                  activeSection === item.id ? 'text-purple-600' : 'text-gray-700'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+            <a href="mailto:alimibarabarakat001@gmail.com">
+              <button className="w-full px-6 py-2.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-medium">
+                Let's Talk
+              </button>
+            </a>
           </div>
-
-          {[
-            { id: "about", label: "About me" },
-            { id: "skills", label: "My skills" },
-            { id: "projects", label: "Projects" },
-            { id: "contacts", label: "Contacts" },
-          ].map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`block text-lg text-white hover:text-gray-300 transition-colors ${
-                activeSection === item.id ? "text-gray-300" : ""
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-
-          <a href="mailto:alimibarabarakat001@gmail.com">
-            <Button
-              name="Contact Me"
-              style={`bg-gray-500 text-white rounded-2xl hover:bg-gray-600`}
-            />
-          </a>
         </div>
       )}
     </nav>
