@@ -124,7 +124,7 @@ const Contacts = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-14 h-14 bg-white rounded-full flex items-center justify-center text-gray-600 ${social.color} shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
+                  className={`w-14 h-14 bg-white rounded-full flex items-center justify-center text-white ${social.color} shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1`}
                 >
                   <Icon className="text-2xl" />
                 </a>
