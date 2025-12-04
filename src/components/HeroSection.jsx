@@ -11,13 +11,27 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden"
     >
-      {/* Animated Background Elements */}
+      {/* Animated Background Pattern */}
+      <div className="absolute inset-0 opacity-20">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(167, 139, 250, 0.3) 2%, transparent 0%), 
+                           radial-gradient(circle at 75px 75px, rgba(139, 92, 246, 0.3) 2%, transparent 0%)`,
+            backgroundSize: "100px 100px",
+          }}
+        ></div>
+      </div>
+
+      {/* Gradient Orbs */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-20 left-40 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
       </div>
 
       {/* Content */}
@@ -32,11 +46,11 @@ const HeroSection = () => {
           <TypewriterText text="Hi, I'm Barokah Oyindamola" speed={80} />
         </h1>
 
-        <p className="text-xl md:text-2xl text-purple-200 mb-4 font-light">
+        <p className="text-xl md:text-2xl text-purple-300 mb-4 font-light">
           Frontend Developer & UI Enthusiast
         </p>
 
-        <p className="text-lg text-purple-100 mb-12 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
           Crafting exceptional digital experiences with clean code, modern
           design, and a passion for creating intuitive user interfaces
         </p>
@@ -44,7 +58,7 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <button
             onClick={scrollToProjects}
-            className="px-8 py-4 bg-white text-purple-900 rounded-full font-semibold hover:shadow-2xl transform hover:-translate-y-1 transition-all"
+            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all"
           >
             View My Work
           </button>
@@ -53,42 +67,13 @@ const HeroSection = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <button className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-purple-900 transition-all flex items-center gap-2">
+            <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all flex items-center gap-2">
               <Download size={20} />
               Download CV
             </button>
           </a>
         </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown size={32} className="text-white/60" />
-        </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0%,
-          100% {
-            transform: translate(0, 0) scale(1);
-          }
-          33% {
-            transform: translate(30px, -50px) scale(1.1);
-          }
-          66% {
-            transform: translate(-20px, 20px) scale(0.9);
-          }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
     </section>
   );
 };
