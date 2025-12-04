@@ -60,7 +60,7 @@ const Contacts = () => {
   ];
 
   return (
-    <section id="contacts" ref={sectionRef} className="py-24 bg-gray-900 ">
+    <section id="contacts" ref={sectionRef} className="py-24 bg-white ">
       <div className="max-w-7xl mx-auto px-6">
         <div
           className={`text-center mb-16 transition-all duration-1000 ${
@@ -91,7 +91,7 @@ const Contacts = () => {
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div className="bg-gray-900 rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
                   <div
                     className={`w-16 h-16 bg-gradient-to-r ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}
                   >
