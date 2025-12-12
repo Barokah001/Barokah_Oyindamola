@@ -7,7 +7,7 @@ import {
   FaNpm,
   FaGit,
 } from "react-icons/fa";
-import { SiNextdotjs } from "react-icons/si";
+import { SiNextdotjs, SiJavascript, SiTypescript } from "react-icons/si";
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,6 +33,8 @@ const SkillsSection = () => {
   const skills = [
     { name: "React", icon: FaReact, color: "text-cyan-400" },
     { name: "Next.js", icon: SiNextdotjs, color: "text-gray-900" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-blue-600" },
     { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
     { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500" },
     { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
@@ -62,7 +64,7 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             return (
