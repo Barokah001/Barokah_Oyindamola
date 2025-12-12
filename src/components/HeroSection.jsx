@@ -52,9 +52,7 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
         <div className="mb-6 inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-          <span className="text-sm font-medium">
-            Welcome to my portfolio
-          </span>
+          <span className="text-sm font-medium">Welcome to my portfolio</span>
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -78,7 +76,7 @@ const HeroSection = () => {
             View My Work
           </button>
           <a
-            href="https://drive.google.com/file/d/1aAiahcLI5e82Lcdh6Nm06kEx-lBQM0ru/view?usp=drive_link"
+            href="https://drive.google.com/file/d/1iOw6e4kZKq19BQHLWCOVqxfjBijLAu7i/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
           >
