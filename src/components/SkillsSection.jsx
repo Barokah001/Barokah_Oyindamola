@@ -6,8 +6,8 @@ import {
   FaNodeJs,
   FaNpm,
   FaGit,
-
 } from "react-icons/fa";
+import { SiNextdotjs } from "react-icons/si";
 
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,12 +31,13 @@ const SkillsSection = () => {
   }, []);
 
   const skills = [
-    { name: "React", icon: FaReact, color: "from-blue-400 to-cyan-400" },
-    { name: "HTML5", icon: FaHtml5, color: "from-orange-500 to-red-500" },
-    { name: "CSS3", icon: FaCss3Alt, color: "from-blue-500 to-blue-600" },
-    { name: "Node.js", icon: FaNodeJs, color: "from-green-500 to-green-600" },
-    { name: "npm", icon: FaNpm, color: "from-red-600 to-red-700" },
-    { name: "Git", icon: FaGit, color: "from-orange-600 to-red-600" },
+    { name: "React", icon: FaReact, color: "text-cyan-400" },
+    { name: "Next.js", icon: SiNextdotjs, color: "text-gray-900" },
+    { name: "HTML5", icon: FaHtml5, color: "text-orange-500" },
+    { name: "CSS3", icon: FaCss3Alt, color: "text-blue-500" },
+    { name: "Node.js", icon: FaNodeJs, color: "text-green-500" },
+    { name: "npm", icon: FaNpm, color: "text-red-600" },
+    { name: "Git", icon: FaGit, color: "text-orange-600" },
   ];
 
   return (
@@ -61,7 +62,7 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6">
           {skills.map((skill, index) => {
             const Icon = skill.icon;
             return (
@@ -77,7 +78,7 @@ const SkillsSection = () => {
                 <div className="group bg-white rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 hover:scale-105">
                   <div className="flex flex-col items-center">
                     <div
-                      className={`text-6xl mb-4 bg-gradient-to-r ${skill.color} bg-clip-text text-transparent transition-transform duration-300 group-hover:scale-110`}
+                      className={`text-6xl mb-4 ${skill.color} transition-transform duration-300 group-hover:scale-110`}
                     >
                       <Icon />
                     </div>
@@ -123,4 +124,5 @@ const SkillsSection = () => {
     </section>
   );
 };
+
 export default SkillsSection;

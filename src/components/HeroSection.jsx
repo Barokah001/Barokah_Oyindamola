@@ -1,7 +1,22 @@
-import React from 'react'
-import TypewriterText from './TypewriterText';
-import Button from './Button';
+import React from 'react';
 import { ChevronDown, Download } from 'lucide-react';
+
+const TypewriterText = ({ text, speed = 80 }) => {
+  const [displayedText, setDisplayedText] = React.useState('');
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayedText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, speed);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, text, speed]);
+
+  return <span>{displayedText}</span>;
+};
 
 const HeroSection = () => {
   const scrollToProjects = () => {
@@ -11,7 +26,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden"
     >
       {/* Animated Background Pattern */}
       <div className="absolute inset-0 opacity-20">
@@ -78,4 +93,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection
+export default HeroSection;
