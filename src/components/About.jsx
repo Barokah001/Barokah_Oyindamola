@@ -51,10 +51,10 @@ const About = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl transform rotate-3"></div>
               <div className="relative bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl">
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Passionate Frontend Developer
+                  Result-Driven Frontend Developer
                 </h3>
                 <p className="text-gray-700 leading-relaxed mb-4">
-                  I specialize in building responsive, user-centric web
+                  I excel in building responsive, user-centric web
                   applications that combine aesthetic appeal with functional
                   excellence. My approach focuses on writing clean, maintainable
                   code while ensuring optimal performance and accessibility.
@@ -68,6 +68,8 @@ const About = () => {
                 <div className="flex flex-wrap gap-3">
                   {[
                     "React",
+                    "Next.js",
+                    "TypeScript",
                     "JavaScript",
                     "Tailwind CSS",
                     "Responsive Design",
