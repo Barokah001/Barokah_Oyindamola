@@ -49,19 +49,31 @@ const Projects = () => {
       highlights: ["Responsive Design", "Smooth Animations", "SEO Optimized"],
     },
     {
-      id: 3,
-      title: "E-commerce Product Page",
-      description:
-        "A modern product display page with dynamic image switching, quantity updates, and 'Add to Cart' functionality for a real-world online store feel.",
-      detailedDescription:
-        "Developed an interactive e-commerce interface with advanced cart functionality, image galleries with zoom capabilities, and real-time inventory management. Focused on creating an intuitive shopping experience.",
-      image: "./images/sneakers.png",
-      technologies: ["React", "Javascript", "Tailwind"],
-      techColors: ["text-blue-400", "text-yellow-400", "text-cyan-400"],
-      githubUrl: "https://github.com/Barokah001/E-commerce-Products-Page",
-      liveUrl: "https://e-commerce-products-page-green.vercel.app/",
-      highlights: ["Cart Management", "Image Gallery", "State Management"],
-    },
+  id: 3,
+  title: "Royale Outfits",
+  description:
+    "A modern e-commerce clothing platform for premium kaftans, traditional caps, and ready-made menswear, designed with a clean and elegant shopping experience.",
+  detailedDescription:
+    "Built a full-featured fashion e-commerce website focused on showcasing African menswear. Implemented dynamic product listings, collection pages, smooth animations, and a responsive UI. The project emphasizes performance, accessibility, and a luxury brand feel.",
+  image: "./images/royale-outfit.png",
+  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
+  techColors: [
+    "text-gray-900",
+    "text-blue-500",
+    "text-cyan-400",
+    "text-violet-500",
+    "text-pink-500"
+  ],
+  githubUrl: "https://github.com/Barokah001/RoyaleOutfit",
+  liveUrl: "https://royale-outfit.vercel.app/",
+  highlights: [
+    "Modern App Router Architecture",
+    "Smooth UI Animations",
+    "Responsive & Accessible Design",
+    "Clean Product & Collection Pages"
+  ],
+},
+
     {
       id: 4,
       title: "Ramadan Companion",
@@ -96,6 +108,22 @@ const Projects = () => {
       liveUrl: "https://fruitvilla.vercel.app/",
       highlights: ["Product Filtering", "Cart Persistence", "Mobile First"],
     },
+
+     {
+      id: 6,
+      title: "E-commerce Product Page",
+      description:
+        "A modern product display page with dynamic image switching, quantity updates, and 'Add to Cart' functionality for a real-world online store feel.",
+      detailedDescription:
+        "Developed an interactive e-commerce interface with advanced cart functionality, image galleries with zoom capabilities, and real-time inventory management. Focused on creating an intuitive shopping experience.",
+      image: "./images/sneakers.png",
+      technologies: ["React", "Javascript", "Tailwind"],
+      techColors: ["text-blue-400", "text-yellow-400", "text-cyan-400"],
+      githubUrl: "https://github.com/Barokah001/E-commerce-Products-Page",
+      liveUrl: "https://e-commerce-products-page-green.vercel.app/",
+      highlights: ["Cart Management", "Image Gallery", "State Management"],
+    },
+    
   ];
 
   useEffect(() => {
