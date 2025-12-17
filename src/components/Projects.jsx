@@ -34,22 +34,7 @@ const Projects = () => {
     },
 
     {
-      id: 2,
-      title: "Techty Website",
-      description:
-        "A sleek, responsive tech brand website showcasing services and solutions with an engaging design and smooth navigation",
-      detailedDescription:
-        "Built a comprehensive tech brand website featuring dynamic animations, responsive layouts, and optimized performance. Implemented modern React patterns with custom hooks for state management and seamless user interactions.",
-      image: "./images/Techty.png",
-      technologies: ["React", "Javascript", "Tailwind"],
-      techColors: ["text-blue-400", "text-yellow-400", "text-cyan-400"],
-      githubUrl: "https://github.com/Barokah001/Techty-Web",
-      liveUrl:
-        "https://techty-web-mzdy-4uu5wnact-alimibarakat001gmailcoms-projects.vercel.app/",
-      highlights: ["Responsive Design", "Smooth Animations", "SEO Optimized"],
-    },
-    {
-  id: 3,
+  id: 2,
   title: "Royale Outfits",
   description:
     "A modern e-commerce clothing platform for premium kaftans, traditional caps, and ready-made menswear, designed with a clean and elegant shopping experience.",
@@ -73,6 +58,22 @@ const Projects = () => {
     "Clean Product & Collection Pages"
   ],
 },
+
+    {
+      id: 3,
+      title: "Techty Website",
+      description:
+        "A sleek, responsive tech brand website showcasing services and solutions with an engaging design and smooth navigation",
+      detailedDescription:
+        "Built a comprehensive tech brand website featuring dynamic animations, responsive layouts, and optimized performance. Implemented modern React patterns with custom hooks for state management and seamless user interactions.",
+      image: "./images/Techty.png",
+      technologies: ["React", "Javascript", "Tailwind"],
+      techColors: ["text-blue-400", "text-yellow-400", "text-cyan-400"],
+      githubUrl: "https://github.com/Barokah001/Techty-Web",
+      liveUrl:
+        "https://techty-web-mzdy-4uu5wnact-alimibarakat001gmailcoms-projects.vercel.app/",
+      highlights: ["Responsive Design", "Smooth Animations", "SEO Optimized"],
+    },
 
     {
       id: 4,
