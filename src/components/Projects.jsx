@@ -34,30 +34,36 @@ const Projects = () => {
     },
 
     {
-  id: 2,
-  title: "Royale Outfits",
-  description:
-    "A modern e-commerce clothing platform for premium kaftans, traditional caps, and ready-made menswear, designed with a clean and elegant shopping experience.",
-  detailedDescription:
-    "Built a full-featured fashion e-commerce website focused on showcasing African menswear. Implemented dynamic product listings, collection pages, smooth animations, and a responsive UI. The project emphasizes performance, accessibility, and a luxury brand feel.",
-  image: "./images/royale-outfit.png",
-  technologies: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "Framer Motion"],
-  techColors: [
-    "text-gray-900",
-    "text-blue-500",
-    "text-cyan-400",
-    "text-violet-500",
-    "text-pink-500"
-  ],
-  githubUrl: "https://github.com/Barokah001/RoyaleOutfit",
-  liveUrl: "https://royale-outfit.vercel.app/",
-  highlights: [
-    "Modern App Router Architecture",
-    "Smooth UI Animations",
-    "Responsive & Accessible Design",
-    "Clean Product & Collection Pages"
-  ],
-},
+      id: 2,
+      title: "Royale Outfits",
+      description:
+        "A modern e-commerce clothing platform for premium kaftans, traditional caps, and ready-made menswear, designed with a clean and elegant shopping experience.",
+      detailedDescription:
+        "Built a full-featured fashion e-commerce website focused on showcasing African menswear. Implemented dynamic product listings, collection pages, smooth animations, and a responsive UI. The project emphasizes performance, accessibility, and a luxury brand feel.",
+      image: "./images/royale-outfit.png",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "shadcn/ui",
+        "Framer Motion",
+      ],
+      techColors: [
+        "text-gray-900",
+        "text-blue-500",
+        "text-cyan-400",
+        "text-violet-500",
+        "text-pink-500",
+      ],
+      githubUrl: "https://github.com/Barokah001/RoyaleOutfit",
+      liveUrl: "https://royale-outfit.vercel.app/",
+      highlights: [
+        "Modern App Router Architecture",
+        "Smooth UI Animations",
+        "Responsive & Accessible Design",
+        "Clean Product & Collection Pages",
+      ],
+    },
 
     {
       id: 3,
@@ -70,8 +76,7 @@ const Projects = () => {
       technologies: ["React", "Javascript", "Tailwind"],
       techColors: ["text-blue-400", "text-yellow-400", "text-cyan-400"],
       githubUrl: "https://github.com/Barokah001/Techty-Web",
-      liveUrl:
-        "https://techty-web-mzdy-4uu5wnact-alimibarakat001gmailcoms-projects.vercel.app/",
+      liveUrl: "https://techty-web.vercel.app/",
       highlights: ["Responsive Design", "Smooth Animations", "SEO Optimized"],
     },
 
@@ -110,7 +115,7 @@ const Projects = () => {
       highlights: ["Product Filtering", "Cart Persistence", "Mobile First"],
     },
 
-     {
+    {
       id: 6,
       title: "E-commerce Product Page",
       description:
@@ -124,7 +129,6 @@ const Projects = () => {
       liveUrl: "https://e-commerce-products-page-green.vercel.app/",
       highlights: ["Cart Management", "Image Gallery", "State Management"],
     },
-    
   ];
 
   useEffect(() => {
