@@ -55,7 +55,7 @@ const Projects = () => {
         "text-violet-500",
         "text-pink-500",
       ],
-      githubUrl: "https://github.com/Barokah001/RoyaleOutfit",
+      githubUrl: "https://github.com/Barokah001",
       liveUrl: "https://royale-outfit.vercel.app/",
       highlights: [
         "Modern App Router Architecture",
