@@ -46,16 +46,29 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Techty Website",
-      description:
-        "A sleek, responsive tech brand website showcasing services and solutions with an engaging design and smooth navigation.",
-      detailedDescription:
-        "Built a comprehensive tech brand website featuring dynamic animations, responsive layouts, and optimised performance. Implemented modern React patterns with custom hooks for state management and seamless user interactions.",
-      image: "./images/Techty.png",
-      technologies: ["React", "JavaScript", "Tailwind"],
-      githubUrl: "https://github.com/Barokah001/Techty-Web",
-      liveUrl: "https://techty-web.vercel.app/",
-      highlights: ["Responsive design", "Smooth animations", "SEO optimised"],
+  title: "Our Diet Line Website",
+
+  description:
+    "A responsive organizational website built to showcase ODL's mission, initiatives, impact, and opportunities to get involved.",
+
+  detailedDescription:
+    "Designed and developed a modern website for Our Diet Line (ODL), a nutrition-focused organization dedicated to advocacy, innovation, and capacity development. The website presents the organization's initiatives, impact, and key information through a clean, responsive interface with smooth navigation and engaging visual sections.",
+
+  image: "./images/odl.png",
+
+  technologies: ["React", "JavaScript", "Tailwind CSS"],
+
+  githubUrl: "https://github.com/Barokah001/ODL-Web",
+
+  liveUrl: "https://ourdietline.org/",
+
+  highlights: [
+    "Responsive design",
+    "Interactive navigation",
+    "Clear presentation of initiatives and impact",
+    "Mobile-friendly layout",
+    "Modern visual design"
+  ],
     },
     {
       id: 4,
@@ -91,16 +104,16 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: "E-commerce Product Page",
+  title: "Techty Website",
       description:
-        "A modern product display page with dynamic image switching, quantity updates, and 'Add to Cart' functionality for a real-world online store feel.",
+        "A sleek, responsive tech brand website showcasing services and solutions with an engaging design and smooth navigation.",
       detailedDescription:
-        "Developed an interactive e-commerce interface with advanced cart functionality, image galleries, and real-time inventory management. Focused on creating an intuitive shopping experience.",
-      image: "./images/sneakers.png",
+        "Built a comprehensive tech brand website featuring dynamic animations, responsive layouts, and optimised performance. Implemented modern React patterns with custom hooks for state management and seamless user interactions.",
+      image: "./images/Techty.png",
       technologies: ["React", "JavaScript", "Tailwind"],
-      githubUrl: "https://github.com/Barokah001/E-commerce-Products-Page",
-      liveUrl: "https://e-commerce-products-page-green.vercel.app/",
-      highlights: ["Cart management", "Image gallery", "State management"],
+      githubUrl: "https://github.com/Barokah001/Techty-Web",
+      liveUrl: "https://techty-web.vercel.app/",
+      highlights: ["Responsive design", "Smooth animations", "SEO optimised"],
     },
   ];
 
@@ -146,16 +159,16 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-line border border-line">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projects.map((project, index) => (
             <div
               key={project.id}
               ref={(el) => (projectRefs.current[index] = el)}
-              className="group relative bg-paper overflow-hidden transition-all duration-500 opacity-0 translate-y-6"
+              className="group relative flex flex-col h-full bg-paper border border-line hover:border-navy-950 overflow-hidden transition-all duration-500 opacity-0 translate-y-6"
               style={{ transitionDelay: `${index * 80}ms` }}
             >
               <div
-                className="relative h-56 overflow-hidden cursor-pointer border-b border-line"
+                className="relative h-52 overflow-hidden cursor-pointer border-b border-line shrink-0"
                 onClick={() => openModal(project)}
               >
                 <img
@@ -173,7 +186,7 @@ const Projects = () => {
                 </div>
               </div>
 
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-lg font-semibold text-navy-950 mb-2">{project.title}</h3>
                 <p className="text-muted text-sm mb-4 line-clamp-2">{project.description}</p>
 
@@ -188,7 +201,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-3 mt-auto pt-1">
                   <a
                     href={project.githubUrl}
                     target="_blank"
