@@ -1,24 +1,16 @@
-import React from 'react';
-import { ChevronDown, Download } from 'lucide-react';
-
-const TypewriterText = ({ text, speed = 80 }) => {
-  const [displayedText, setDisplayedText] = React.useState('');
-  const [currentIndex, setCurrentIndex] = React.useState(0);
-
-  React.useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayedText(prev => prev + text[currentIndex]);
-        setCurrentIndex(prev => prev + 1);
-      }, speed);
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, text, speed]);
-
-  return <span>{displayedText}</span>;
-};
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Download } from "lucide-react";
+import TypewriterText from "./TypewriterText";
 
 const HeroSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const t = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(t);
+  }, []);
+
   const scrollToProjects = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -26,65 +18,91 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center bg-gray-900 overflow-hidden"
+      ref={ref}
+      className="relative min-h-screen flex items-center bg-paper pt-24 pb-16"
     >
-      {/* Animated Background Pattern */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="max-w-6xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center">
+        {/* Text column */}
         <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `radial-gradient(circle at 25px 25px, rgba(167, 139, 250, 0.3) 2%, transparent 0%), 
-                           radial-gradient(circle at 75px 75px, rgba(139, 92, 246, 0.3) 2%, transparent 0%)`,
-            backgroundSize: "100px 100px",
-          }}
-        ></div>
-      </div>
+          className={`transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <div className="flex items-center gap-2 mb-6 font-mono text-xs text-muted">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" aria-hidden="true" />
+            <TypewriterText text="// available for new projects" speed={35} showCursor={false} />
+          </div>
 
-      {/* Gradient Orbs */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
-        <div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
+          <h1 className="font-display font-semibold text-5xl md:text-6xl text-navy-950 leading-[1.08] mb-6">
+            Barokah
+            <br />
+            Oyindamola
+          </h1>
 
-      {/* Content */}
-      <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
-        <div className="mb-6 inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-          <span className="text-sm font-medium">Welcome to my portfolio</span>
+          <p className="text-lg text-muted mb-4 font-medium">
+            Frontend Developer
+          </p>
+
+          <p className="text-base text-muted leading-relaxed mb-10 max-w-md">
+            I build responsive, accessible web interfaces with React,
+            Next.js and TypeScript — with a focus on clean code, considered
+            detail and interfaces that hold up under real use.
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <button
+              onClick={scrollToProjects}
+              className="inline-flex items-center gap-2 px-6 py-3.5 bg-navy-950 text-white text-sm font-medium hover:bg-navy-800 transition-colors"
+            >
+              View my work
+              <ArrowRight size={16} />
+            </button>
+            <a
+              href="https://drive.google.com/file/d/1iOw6e4kZKq19BQHLWCOVqxfjBijLAu7i/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="inline-flex items-center gap-2 px-6 py-3.5 border border-navy-950 text-navy-950 text-sm font-medium hover:bg-navy-950 hover:text-white transition-colors">
+                <Download size={16} />
+                Download CV
+              </button>
+            </a>
+          </div>
         </div>
 
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-          <TypewriterText text="Hi, I'm Barokah Oyindamola" speed={80} />
-        </h1>
+        {/* Code editor window */}
+        <div
+          className={`transition-all duration-700 delay-150 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
+          <div className="border border-line shadow-lift">
+            {/* window chrome */}
+            <div className="flex items-center justify-between px-4 py-3 bg-surface border-b border-line">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full border border-muted/40" />
+                <span className="w-2.5 h-2.5 rounded-full border border-muted/40" />
+                <span className="w-2.5 h-2.5 rounded-full border border-muted/40" />
+              </div>
+              <span className="font-mono text-xs text-muted">developer.ts</span>
+              <span className="w-10" aria-hidden="true" />
+            </div>
 
-        <p className="text-xl md:text-2xl text-purple-300 mb-4 font-light">
-          Frontend Developer & UI Enthusiast
-        </p>
-
-        <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Crafting exceptional digital experiences with clean code, modern
-          design, and a passion for creating intuitive user interfaces
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button
-            onClick={scrollToProjects}
-            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full font-semibold hover:shadow-2xl hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all"
-          >
-            View My Work
-          </button>
-          <a
-            href="https://drive.google.com/file/d/1iOw6e4kZKq19BQHLWCOVqxfjBijLAu7i/view?usp=drive_link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold hover:bg-white/10 backdrop-blur-sm transition-all flex items-center gap-2">
-              <Download size={20} />
-              Download CV
-            </button>
-          </a>
+            {/* code body */}
+            <div className="bg-navy-950 px-6 py-8 font-mono text-[13px] leading-7 overflow-x-auto">
+              <pre className="whitespace-pre">
+<code>
+<span className="text-muted/70">01</span>{"  "}<span className="text-[#7C93B8]">const</span> <span className="text-white">developer</span> <span className="text-[#7C93B8]">=</span> {"{"}
+{"\n"}<span className="text-muted/70">02</span>{"    "}name: <span className="text-accent">'Barokah Oyindamola'</span>,
+{"\n"}<span className="text-muted/70">03</span>{"    "}role: <span className="text-accent">'Frontend Developer'</span>,
+{"\n"}<span className="text-muted/70">04</span>{"    "}stack: [<span className="text-accent">'React'</span>, <span className="text-accent">'Next.js'</span>, <span className="text-accent">'TypeScript'</span>],
+{"\n"}<span className="text-muted/70">05</span>{"    "}focus: <span className="text-accent">'clean code, considered UI'</span>,
+{"\n"}<span className="text-muted/70">06</span>{"    "}available: <span className="text-[#7C93B8]">true</span>,
+{"\n"}<span className="text-muted/70">07</span>{"  "}{"};"}
+</code>
+              </pre>
+            </div>
+          </div>
         </div>
       </div>
     </section>

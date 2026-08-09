@@ -1,27 +1,23 @@
-"use client";
+import { useEffect, useState } from "react";
 
-import { useState, useEffect } from "react";
-
-
-const TypewriterText = (props) => {
-    const { text, speed = 100, className = "" } = props;
+const TypewriterText = ({ text, speed = 45, className = "", showCursor = true }) => {
   const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + text[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      }, speed);
+    setDisplayText("");
+    let i = 0;
+    const interval = setInterval(() => {
+      i += 1;
+      setDisplayText(text.slice(0, i));
+      if (i >= text.length) clearInterval(interval);
+    }, speed);
+    return () => clearInterval(interval);
+  }, [text, speed]);
 
-      return () => clearTimeout(timeout);
-    }
-  }, [currentIndex, text, speed]);
   return (
     <span className={className}>
       {displayText}
-      <span className="animate-pulse">|</span>
+      {showCursor && <span className="inline-block w-[2px] h-[1em] bg-accent align-middle ml-0.5 animate-pulse" />}
     </span>
   );
 };

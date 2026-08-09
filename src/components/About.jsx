@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Check } from "lucide-react";
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -7,121 +8,102 @@ const About = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.2 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
   const stats = [
-    { number: "15+", label: "Projects Completed" },
-    { number: "100%", label: "Client Satisfaction" },
-    { number: "3+", label: "Years Experience" },
+    { number: "15+", label: "Projects completed" },
+    { number: "100%", label: "Client satisfaction" },
+    { number: "3+", label: "Years experience" },
+  ];
+
+  const strengths = [
+    "Clean, maintainable code architecture",
+    "Pixel-accurate implementation of designs",
+    "Performance optimisation & best practices",
+    "Cross-browser compatibility",
+    "Collaborative, communicative team player",
   ];
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="about" ref={sectionRef} className="py-28 bg-paper border-t border-line">
+      <div className="max-w-6xl mx-auto px-6">
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          className={`mb-16 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
         >
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">About Me</h2>
-          <div className="w-24 h-1.5 bg-gradient-to-r from-purple-600 to-blue-600 mx-auto mb-8"></div>
+          <p className="font-mono text-xs text-accent mb-3">// 01 — About</p>
+          <h2 className="font-display font-semibold text-4xl md:text-5xl text-navy-950">
+            About me
+          </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16">
           <div
-            className={`transition-all duration-1000 delay-200 ${
-              isVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 -translate-x-10"
+            className={`transition-all duration-700 delay-100 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl transform rotate-3"></div>
-              <div className="relative bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  Result-Driven Frontend Developer
-                </h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  I excel in building responsive, user-centric web
-                  applications that combine aesthetic appeal with functional
-                  excellence. My approach focuses on writing clean, maintainable
-                  code while ensuring optimal performance and accessibility.
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  With expertise in modern JavaScript frameworks and a keen eye
-                  for design, I transform ideas into engaging digital
-                  experiences that drive results and exceed expectations.
-                </p>
+            <h3 className="text-xl font-semibold text-navy-950 mb-4">
+              Frontend developer, focused on the details that make an
+              interface feel considered.
+            </h3>
+            <p className="text-muted leading-relaxed mb-4">
+              I build responsive, user-centred web applications where
+              design intent survives contact with real code. My approach
+              starts with structure: clear component boundaries, readable
+              state, and layouts that hold up across devices before any
+              polish is applied.
+            </p>
+            <p className="text-muted leading-relaxed mb-8">
+              I work mainly with React, Next.js and TypeScript, pairing
+              modern tooling with an eye for typography, spacing and
+              accessibility — so the finished product reads as deliberate,
+              not default.
+            </p>
 
-                <div className="flex flex-wrap gap-3">
-                  {[
-                    "React",
-                    "Next.js",
-                    "TypeScript",
-                    "JavaScript",
-                    "Tailwind CSS",
-                    "Responsive Design",
-                    "UI/UX",
-                  ].map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-4 py-2 bg-white rounded-lg text-gray-700 font-medium shadow-sm"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
+            <div className="flex flex-wrap gap-2">
+              {["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Accessibility"].map(
+                (skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1.5 border border-line text-sm text-navy-950 font-medium"
+                  >
+                    {skill}
+                  </span>
+                )
+              )}
             </div>
           </div>
 
           <div
-            className={`transition-all duration-1000 delay-400 ${
-              isVisible
-                ? "opacity-100 translate-x-0"
-                : "opacity-0 translate-x-10"
+            className={`transition-all duration-700 delay-200 ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <div className="grid grid-cols-3 gap-3">
+            <div className="grid grid-cols-3 gap-px bg-line border border-line mb-6">
               {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center px-3 py-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl hover:shadow-lg transition-shadow"
-                >
-                  <div className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mb-2">
+                <div key={index} className="bg-paper text-center px-3 py-8">
+                  <div className="font-display font-semibold text-3xl text-navy-950 mb-1">
                     {stat.number}
                   </div>
-                  <div className="text-gray-600 font-small md:font-medium">{stat.label}</div>
+                  <div className="text-xs text-muted">{stat.label}</div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 p-6 bg-gray-900 text-white rounded-2xl">
-              <h4 className="text-xl font-bold mb-4">
-                What I Bring to the Table
-              </h4>
+            <div className="border border-line p-8">
+              <p className="font-mono text-xs text-accent mb-4">// what I bring</p>
               <ul className="space-y-3">
-                {[
-                  "Clean, maintainable code architecture",
-                  "Pixel-perfect implementation of designs",
-                  "Performance optimization & best practices",
-                  "Cross-browser compatibility",
-                  "Collaborative team player",
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="text-purple-400 mt-1">✓</span>
+                {strengths.map((item, index) => (
+                  <li key={index} className="flex items-start gap-3 text-sm text-navy-950">
+                    <Check size={16} className="text-accent mt-0.5 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}

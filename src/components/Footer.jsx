@@ -1,7 +1,6 @@
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -14,33 +13,32 @@ const Footer = () => {
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    if (element) element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+    <footer className="bg-navy-950 text-white py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="grid md:grid-cols-3 gap-10 mb-12">
           <div>
-            <h3 className="text-2xl font-bold mb-4">
-              Barokah<span className="text-purple-400">.</span>
+            <h3 className="flex items-center gap-2 font-display font-semibold text-xl mb-4">
+              <span className="w-2 h-2 rounded-full bg-accent" aria-hidden="true" />
+              Barokah Oyindamola
             </h3>
-            <p className="text-gray-400">
-              Crafting digital experiences with passion and precision. Let's
-              build something amazing together.
+            <p className="text-white/60 text-sm leading-relaxed max-w-xs">
+              Frontend developer building clean, accessible interfaces.
+              Currently open to new projects and roles.
             </p>
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+            <p className="font-mono text-xs text-white/40 mb-4">// navigate</p>
+            <ul className="space-y-2.5">
               {footerLinks.map((link) => (
                 <li key={link.id}>
                   <button
                     onClick={() => scrollToSection(link.id)}
-                    className="text-gray-400 hover:text-purple-400 transition-colors"
+                    className="text-white/70 hover:text-accent transition-colors text-sm"
                   >
                     {link.label}
                   </button>
@@ -50,13 +48,14 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-bold mb-4">Connect</h4>
-            <div className="flex gap-4">
+            <p className="font-mono text-xs text-white/40 mb-4">// connect</p>
+            <div className="flex gap-3">
               <a
                 href="https://www.linkedin.com/in/barokah-oyindamola"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
+                aria-label="LinkedIn"
+                className="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-accent hover:text-accent transition-colors"
               >
                 <FaLinkedin />
               </a>
@@ -64,7 +63,8 @@ const Footer = () => {
                 href="https://x.com/BarokahOyin"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
+                aria-label="X (Twitter)"
+                className="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-accent hover:text-accent transition-colors"
               >
                 <FaXTwitter />
               </a>
@@ -72,7 +72,8 @@ const Footer = () => {
                 href="https://www.instagram.com/barokah_oyin/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-purple-600 transition-colors"
+                aria-label="Instagram"
+                className="w-10 h-10 flex items-center justify-center border border-white/20 hover:border-accent hover:text-accent transition-colors"
               >
                 <FaInstagram />
               </a>
@@ -80,10 +81,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center">
-          <p className="text-gray-400">
-            © {currentYear} Barokah Oyindamola. All rights reserved. Built with
-            React & Tailwind CSS.
+        <div className="border-t border-white/10 pt-8 text-center">
+          <p className="text-white/40 text-sm">
+            © {currentYear} Barokah Oyindamola. Built with React & Tailwind CSS.
           </p>
         </div>
       </div>
@@ -91,4 +91,4 @@ const Footer = () => {
   );
 };
 
-export default Footer
+export default Footer;
